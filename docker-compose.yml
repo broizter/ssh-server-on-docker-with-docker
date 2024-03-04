@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+
+  ssh-server-on-docker-with-docker:
+    container_name: "ssh-server-on-docker-with-docker"
+    environment:
+      TZ: Etc/UTC
+      SSH_PUBLIC_KEY: |-
+          ssh-key-1
+          ssh-key-2
+    image: "ghcr.io/broizter/ssh-server-on-docker-with-docker:latest"
+    ports:
+      - "222:22/tcp"
+    restart: "unless-stopped"
+    volumes:
+     - "/var/run/docker.sock:/var/run/docker.sock"
