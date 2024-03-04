@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-LABEL build_version="2024-03-04.0"
+LABEL build_version="1.0"
 
 RUN apt-get update && apt-get install --no-install-recommends -y openssh-server curl ca-certificates fish && \
 usermod -s /usr/bin/fish root && \
