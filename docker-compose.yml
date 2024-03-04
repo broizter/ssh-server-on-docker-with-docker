@@ -5,6 +5,7 @@ services:
     container_name: "ssh-server-on-docker-with-docker"
     environment:
       TZ: Etc/UTC
+      COMPOSE_FILE: /path/to/docker-compose.yml
       SSH_PUBLIC_KEY: |-
           ssh-key-1
           ssh-key-2

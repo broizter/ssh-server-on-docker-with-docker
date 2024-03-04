@@ -14,8 +14,8 @@ if ! [ -f /root/.ssh/authorized_keys ] ; then touch /root/.ssh/authorized_keys ;
 chmod 700 /root/.ssh && \
 chmod 400 /root/.ssh/authorized_keys && \
 curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose && \
-chmod +x /usr/local/bin/docker-compose
-
+chmod +x /usr/local/bin/docker-compose && \
+abbr -a dc docker compose -f $COMPOSE_FILE
 
 COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
 
