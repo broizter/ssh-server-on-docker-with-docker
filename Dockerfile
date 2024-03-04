@@ -16,4 +16,4 @@ COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
 
 EXPOSE 22
 
-CMD ["/bin/bash", "-c", "echo $SSH_PUBLIC_KEY > /root/.ssh/authorized_keys; /usr/sbin/sshd -D"]
+CMD ["/bin/bash", "-c", "echo "$SSH_PUBLIC_KEY" > /root/.ssh/authorized_keys; /usr/sbin/sshd -D"]
